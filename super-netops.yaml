@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: super-netops
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: super-netops
+    spec:
+      containers:
+        - name: super-netops
+          image: f5devcentral/f5-super-netops-container:base
+          # Just spin & wait forever
+          command: [ "/bin/bash", "-c", "--" ]
+          args: [ "while true; do sleep 30; done;" ]
+          # use following command to get a shell on the container
+          # kubectl exec -it $(kubectl get pods --no-headers -o=custom-columns=NAME:.metadata.name | grep ^super-netops- | head -1) bash
