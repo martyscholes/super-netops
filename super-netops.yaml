@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: super-netops
-          image: martyscholes/f5-super-netops-container:base
+          image: martyscholes/f5-super-netops-container
           # Just spin & wait forever
           command: [ "/bin/bash", "-c", "--" ]
           args: [ "while true; do sleep 30; done;" ]
