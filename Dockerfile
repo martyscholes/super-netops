@@ -1,7 +1,7 @@
 # [START all]
 # Create an enhanced and K8s-friendly Super NetOps container
 FROM f5devcentral/f5-super-netops-container:base
-RUN apk update
+RUN apk update && apk add ca-certificates && update-ca-certificates && apk add openssl
 RUN apk add ansible
 RUN apk add python
 RUN pip install ansible
