@@ -14,8 +14,7 @@ WORKDIR ~/ansible/playbooks
 RUN wget https://raw.githubusercontent.com/mlowcher61/F5-Ansible/master/f5_ansible_setup.yml
 RUN wget https://raw.githubusercontent.com/mlowcher61/F5-Ansible/master/enable_appconnector.yml
 RUN wget https://raw.githubusercontent.com/mlowcher61/F5-Ansible/master/appconnector_vips.yml
-RUN wget https://raw.githubusercontent.com/mlowcher61/F5-Ansible/master/acproxy_part1.yml
-RUN wget https://raw.githubusercontent.com/mlowcher61/F5-Ansible/master/acproxy_part2.yml
+RUN wget https://raw.githubusercontent.com/mlowcher61/F5-Ansible/master/acproxy_install.yml
 RUN wget https://raw.githubusercontent.com/mlowcher61/F5-Ansible/master/appconn_monitor.yml
 
 # demonstrate that the above ran
