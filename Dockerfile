@@ -8,5 +8,13 @@ RUN pip install ansible
 RUN pip install bigsuds
 RUN pip install f5-sdk
 RUN pip install netaddr
+
+# create directories necessary for f5-ansible setup
+RUN rm -rf /usr/share/ansible
+RUN mkdir /usr/share/ansible
+RUN mkdir ~/ansible
+RUN mkdir ~/ansible/playbooks/
+RUN mkdir ~/ansible/playbooks/files/
+
 CMD node
 # [END all]
