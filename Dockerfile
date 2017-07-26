@@ -1,13 +1,6 @@
 # [START all]
 # Create an enhanced and K8s-friendly Super NetOps container
-FROM f5devcentral/f5-super-netops-container:base
-RUN apk update && apk add ca-certificates && update-ca-certificates && apk add openssl
-RUN apk add ansible
-RUN apk add python
-RUN pip install ansible
-RUN pip install bigsuds
-RUN pip install f5-sdk
-RUN pip install netaddr
+FROM f5devcentral/f5-super-netops-container:ansible
 
 # create directories necessary for f5-ansible setup
 RUN rm -rf /usr/share/ansible
@@ -20,6 +13,4 @@ RUN cd ~/ansible/playbooks && wget https://raw.githubusercontent.com/mlowcher61/
 # demonstrate that the above ran
 RUN ls -lR /usr/share/ansible ~
 
-# spin forever
-CMD node
 # [END all]
